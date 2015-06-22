@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94731D91B376B16007646DA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731D81B376B16007646DA /* User.m */; };
+		C94731DC1B376BCA007646DA /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731DB1B376BCA007646DA /* Media.m */; };
+		C94731DF1B376CB3007646DA /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731DE1B376CB3007646DA /* Comment.m */; };
+		C94731E21B376D49007646DA /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731E11B376D49007646DA /* DataSource.m */; };
 		C95707121B3673B300C39DE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C95707111B3673B300C39DE7 /* main.m */; };
 		C95707151B3673B300C39DE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C95707141B3673B300C39DE7 /* AppDelegate.m */; };
 		C957071D1B3673B300C39DE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C957071C1B3673B300C39DE7 /* Images.xcassets */; };
@@ -36,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C94731D71B376B16007646DA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		C94731D81B376B16007646DA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		C94731DA1B376BCA007646DA /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
+		C94731DB1B376BCA007646DA /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		C94731DD1B376CB3007646DA /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		C94731DE1B376CB3007646DA /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		C94731E01B376D49007646DA /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		C94731E11B376D49007646DA /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		C957070C1B3673B300C39DE7 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95707101B3673B300C39DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C95707111B3673B300C39DE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +119,14 @@
 				C957070F1B3673B300C39DE7 /* Supporting Files */,
 				C957074A1B3676B000C39DE7 /* ImagesTableViewController.h */,
 				C957074B1B3676B000C39DE7 /* ImagesTableViewController.m */,
+				C94731D71B376B16007646DA /* User.h */,
+				C94731D81B376B16007646DA /* User.m */,
+				C94731DA1B376BCA007646DA /* Media.h */,
+				C94731DB1B376BCA007646DA /* Media.m */,
+				C94731DD1B376CB3007646DA /* Comment.h */,
+				C94731DE1B376CB3007646DA /* Comment.m */,
+				C94731E01B376D49007646DA /* DataSource.h */,
+				C94731E11B376D49007646DA /* DataSource.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -263,7 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94731D91B376B16007646DA /* User.m in Sources */,
+				C94731DF1B376CB3007646DA /* Comment.m in Sources */,
+				C94731DC1B376BCA007646DA /* Media.m in Sources */,
 				C957074C1B3676B000C39DE7 /* ImagesTableViewController.m in Sources */,
+				C94731E21B376D49007646DA /* DataSource.m in Sources */,
 				C95707151B3673B300C39DE7 /* AppDelegate.m in Sources */,
 				C95707121B3673B300C39DE7 /* main.m in Sources */,
 			);
