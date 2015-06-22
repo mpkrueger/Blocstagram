@@ -27,6 +27,10 @@
     return self;
 }
 
+- (NSMutableArray *)items {
+    return [[DataSource sharedInstance].mediaItems mutableCopy];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,7 +46,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [DataSource sharedInstance].mediaItems.count;
+    return [self items].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,7 +92,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
     //     Delete the row from the data source
-        [[DataSource sharedInstance].mediaItems removeObjectAtIndex:indexPath.row];
+        [[self items] removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:self.images[indexPath.row] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
     //     Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
