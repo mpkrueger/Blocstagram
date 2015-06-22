@@ -27,6 +27,7 @@
 		C95707481B3675F600C39DE7 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C957073E1B3675F600C39DE7 /* 9.jpg */; };
 		C95707491B3675F600C39DE7 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C957073F1B3675F600C39DE7 /* 10.jpg */; };
 		C957074C1B3676B000C39DE7 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C957074B1B3676B000C39DE7 /* ImagesTableViewController.m */; };
+		C957074F1B37B3DE00C39DE7 /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C957074E1B37B3DE00C39DE7 /* MediaTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		C957073F1B3675F600C39DE7 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		C957074A1B3676B000C39DE7 /* ImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesTableViewController.h; sourceTree = "<group>"; };
 		C957074B1B3676B000C39DE7 /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
+		C957074D1B37B3DE00C39DE7 /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
+		C957074E1B37B3DE00C39DE7 /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				C94731DE1B376CB3007646DA /* Comment.m */,
 				C94731E01B376D49007646DA /* DataSource.h */,
 				C94731E11B376D49007646DA /* DataSource.m */,
+				C957074D1B37B3DE00C39DE7 /* MediaTableViewCell.h */,
+				C957074E1B37B3DE00C39DE7 /* MediaTableViewCell.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			files = (
 				C94731D91B376B16007646DA /* User.m in Sources */,
 				C94731DF1B376CB3007646DA /* Comment.m in Sources */,
+				C957074F1B37B3DE00C39DE7 /* MediaTableViewCell.m in Sources */,
 				C94731DC1B376BCA007646DA /* Media.m in Sources */,
 				C957074C1B3676B000C39DE7 /* ImagesTableViewController.m in Sources */,
 				C94731E21B376D49007646DA /* DataSource.m in Sources */,
