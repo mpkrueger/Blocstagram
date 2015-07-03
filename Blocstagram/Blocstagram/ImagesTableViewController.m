@@ -29,7 +29,7 @@
 }
 
 - (NSMutableArray *)items {
-    return [[DataSource sharedInstance].mediaItems mutableCopy];
+    return [DataSource sharedInstance].mediaItems;
 }
 
 - (void)viewDidLoad {
@@ -58,7 +58,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+    Media *item = [self items][indexPath.row];
     return [MediaTableViewCell heightForMediaItem:item width:CGRectGetWidth(self.view.frame)];
 }
 
@@ -72,8 +72,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
     //     Delete the row from the data source
-        [[self items] removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:self.images[indexPath.row] withRowAnimation:UITableViewRowAnimationFade];
+        [[DataSource sharedInstance].mediaItems removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
     //     Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   

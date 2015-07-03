@@ -79,8 +79,10 @@ static NSParagraphStyle *paragraphStyle;
     NSMutableAttributedString *mutableUsernameAndCaptionString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : [lightFont fontWithSize:usernameFontSize], NSParagraphStyleAttributeName : paragraphStyle}];
     
     NSRange usernameRange = [baseString rangeOfString:self.mediaItem.user.userName];
+    NSRange captionRange = [baseString rangeOfString:self.mediaItem.caption];
     [mutableUsernameAndCaptionString addAttribute:NSFontAttributeName value:[boldFont fontWithSize:usernameFontSize] range:usernameRange];
     [mutableUsernameAndCaptionString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+    [mutableUsernameAndCaptionString addAttribute:NSKernAttributeName value:[NSNumber numberWithInt:(2)] range:captionRange];
     
     return mutableUsernameAndCaptionString;
 }
@@ -92,11 +94,26 @@ static NSParagraphStyle *paragraphStyle;
         // Make a string that says "username comment" followed by a line break
         NSString *baseString = [NSString stringWithFormat:@"%@ %@\n", comment.from.userName, comment.text];
         
+       
+        
         // Make an attributed string, with the "username" bold
         NSMutableAttributedString *oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle}];
         
+        
+        
         NSRange usernameRange = [baseString rangeOfString:comment.from.userName];
+        NSRange commentRange = [baseString rangeOfString:comment.text];
+
         [oneCommentString addAttribute:NSFontAttributeName value:boldFont range:usernameRange];
+        
+        if (comment == self.mediaItem.comments[0]) {
+            [oneCommentString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:commentRange];
+        }
+        
+        if ([self.mediaItem.comments indexOfObject:comment] % 2 == 1) {
+            [oneCommentString addAttribute: value:<#(id)#> range:<#(NSRange)#>]
+        }
+        
         [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
         
         [commentString appendAttributedString:oneCommentString];
@@ -116,7 +133,7 @@ static NSParagraphStyle *paragraphStyle;
 - (void) layoutSubviews {
     [super layoutSubviews];
     
-    CGFloat imageHeight = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+    CGFloat imageHeight = self.mediaItem.image.size.height > 0 ? self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds) : 0;
     self.mediaImageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.bounds), imageHeight);
     
     CGSize sizeOfUsernameAndCaptionLabel = [self sizeOfString:self.usernameAndCaptionLabel.attributedText];
