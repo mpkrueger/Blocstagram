@@ -116,6 +116,11 @@
     return [NSString stringWithString:s];
 }
 
+- (void) deleteMediaItem:(Media *)item {
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    [mutableArrayWithKVO removeObject:item];
+}
+
 
 #pragma mark - Key/Value Observing
 
