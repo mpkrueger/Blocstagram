@@ -137,8 +137,8 @@ static NSParagraphStyle *paragraphStyle;
             [oneCommentString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:commentRange];
         }
         
-        NSMutableParagraphStyle *rightAlign = [[NSMutableParagraphStyle alloc] init];
-        [rightAlign setAlignment:NSTextAlignmentRight];
+//        NSMutableParagraphStyle *rightAlign = [[NSMutableParagraphStyle alloc] init];
+//        [rightAlign setAlignment:NSTextAlignmentRight];
         
 //        if ([self.mediaItem.comments indexOfObject:comment] % 2 == 1) {
 //            [oneCommentString addAttribute:NSParagraphStyleAttributeName value:rightAlign range:NSMakeRange(0, [oneCommentString length])];

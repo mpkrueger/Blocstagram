@@ -87,6 +87,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
         [[DataSource sharedInstance] deleteMediaItem:item];
+        [[DataSource sharedInstance].mediaItems insertObject:item atIndex:0];
     }
 }
 
