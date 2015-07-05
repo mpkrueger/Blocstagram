@@ -35,8 +35,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[DataSource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
     
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
+}
+
+- (void) dealloc {
+    [[DataSource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
+}
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (object == [DataSource sharedInstance] && [keyPath isEqualToString:@"mediaItems"]) {
+        NSKeyValueChange kindOfChange = [change[NSKeyValueChangeKindKey] unsignedIntegerValue];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
