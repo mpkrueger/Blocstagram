@@ -21,6 +21,7 @@
 @property (nonatomic, assign) BOOL isRefreshing;
 @property (nonatomic, assign) BOOL isLoadingOlderItems;
 @property (nonatomic, strong) NSString *accessToken;
+@property (nonatomic, assign) BOOL thereAreNoMoreOlderMessages;
 
 @end
 
@@ -52,7 +53,7 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:LoginViewControllerDidGetAccessTokenNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
         self.accessToken = note.object;
         
-        [self populateDataWithParameters:nil];
+        [self populateDataWithParameters:nil completionHandler:nil];
     }];
 }
 
@@ -62,20 +63,29 @@
 }
 
 - (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler {
+    self.thereAreNoMoreOlderMessages = NO;
+    
     if (self.isRefreshing == NO) {
         self.isRefreshing = YES;
         
-        // TODO: add images
+        NSString *minID = [[self.mediaItems firstObject] idNumber];
+        NSDictionary *parameters;
         
-        self.isRefreshing = NO;
-        
-        if(completionHandler) {
-            completionHandler(nil);
+        if (minID) {
+            parameters = @{@"min_id": minID};
         }
+        
+        [self populateDataWithParameters:parameters completionHandler:^(NSError *error) {
+            self.isRefreshing = NO;
+            
+            if (completionHandler) {
+                completionHandler(error);
+            }
+        }];
     }
 }
 
-- (void) populateDataWithParameters:(NSDictionary *)parameters {
+- (void) populateDataWithParameters:(NSDictionary *)parameters completionHandler:(NewItemCompletionBlock)completionHandler {
     if (self.accessToken) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             
@@ -101,8 +111,20 @@
                     if (feedDictionary) {
                         dispatch_sync(dispatch_get_main_queue(), ^{
                             [self parseDataFromFeedDictionary:feedDictionary fromRequestWithParameters:parameters];
+                            
+                            if (completionHandler) {
+                                completionHandler(nil);
+                            }
+                        });
+                    } else if (completionHandler) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completionHandler(jsonError);
                         });
                     }
+                } else if (completionHandler) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completionHandler(webError);
+                    });
                 }
             }
         });
@@ -110,20 +132,84 @@
 }
 
 - (void) parseDataFromFeedDictionary:(NSDictionary *) feedDictionary fromRequestWithParameters:(NSDictionary *)parameters {
-    NSLog(@"%@", feedDictionary);
+    NSArray *mediaArray = feedDictionary[@"data"];
+    
+    NSMutableArray *tmpMediaItems = [NSMutableArray array];
+    
+    for (NSDictionary *mediaDictionary in mediaArray) {
+        Media *mediaItem = [[Media alloc] initWithDictionary:mediaDictionary];
+        
+        if (mediaItem) {
+            [tmpMediaItems addObject:mediaItem];
+            [self downloadImageForMediaItem:mediaItem];
+        }
+    }
+    
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    
+    if (parameters[@"min_id"]) {
+        NSRange rangeOfIndexes = NSMakeRange(0, tmpMediaItems.count);
+        NSIndexSet *indexSetOfNewObjects = [NSIndexSet indexSetWithIndexesInRange:rangeOfIndexes];
+        
+        [mutableArrayWithKVO insertObjects:tmpMediaItems atIndexes:indexSetOfNewObjects];
+    } else if (parameters[@"max_id"]) {
+        if (tmpMediaItems.count == 0) {
+            self.thereAreNoMoreOlderMessages = YES;
+        } else {
+            [mutableArrayWithKVO addObjectsFromArray:tmpMediaItems];
+        }
+    } else {
+        [self willChangeValueForKey:@"mediaItems"];
+        self.mediaItems = tmpMediaItems;
+        [self didChangeValueForKey:@"mediaItems"];
+    }
+}
+     
+- (void) downloadImageForMediaItem:(Media *)mediaItem {
+    if (mediaItem.mediaURL &&  !mediaItem.image) {
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            NSURLRequest *request = [NSURLRequest requestWithURL:mediaItem.mediaURL];
+            
+            NSURLResponse *response;
+            NSError *error;
+            NSData *imageData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            
+            if (imageData) {
+                UIImage *image = [UIImage imageWithData:imageData];
+                
+                if (image) {
+                    mediaItem.image = image;
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+                        NSUInteger index = [mutableArrayWithKVO indexOfObject:mediaItem];
+                        [mutableArrayWithKVO replaceObjectAtIndex:index withObject:mediaItem];
+                    });
+                }
+            } else {
+                NSLog(@"Error downloading image: %@", error);
+            }
+        });
+    }
 }
 
 - (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler {
-    if (self.isLoadingOlderItems == NO) {
+    if (self.isLoadingOlderItems == NO && self.thereAreNoMoreOlderMessages == NO) {
         self.isLoadingOlderItems = YES;
         
-        // TODO: add images
+        NSString *maxID = [[self.mediaItems lastObject] idNumber];
+        NSDictionary *parameters;
         
-        self.isLoadingOlderItems = NO;
-        
-        if (completionHandler) {
-            completionHandler(nil);
+        if (maxID) {
+            parameters = @{@"max_id": maxID};
         }
+        
+        [self populateDataWithParameters:parameters completionHandler:^(NSError *error) {
+            self.isLoadingOlderItems = NO;
+            if (completionHandler) {
+                completionHandler(error);
+            }
+        }];
     }
 }
 
