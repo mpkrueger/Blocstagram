@@ -11,6 +11,7 @@
 		C94731DC1B376BCA007646DA /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731DB1B376BCA007646DA /* Media.m */; };
 		C94731DF1B376CB3007646DA /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731DE1B376CB3007646DA /* Comment.m */; };
 		C94731E21B376D49007646DA /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731E11B376D49007646DA /* DataSource.m */; };
+		C950ABE41B4A0A7F00435A49 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C950ABE31B4A0A7F00435A49 /* LoginViewController.m */; };
 		C95707121B3673B300C39DE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C95707111B3673B300C39DE7 /* main.m */; };
 		C95707151B3673B300C39DE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C95707141B3673B300C39DE7 /* AppDelegate.m */; };
 		C957071D1B3673B300C39DE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C957071C1B3673B300C39DE7 /* Images.xcassets */; };
@@ -49,6 +50,8 @@
 		C94731DE1B376CB3007646DA /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		C94731E01B376D49007646DA /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		C94731E11B376D49007646DA /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		C950ABE21B4A0A7F00435A49 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C950ABE31B4A0A7F00435A49 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C957070C1B3673B300C39DE7 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95707101B3673B300C39DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C95707111B3673B300C39DE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				C94731E11B376D49007646DA /* DataSource.m */,
 				C957074D1B37B3DE00C39DE7 /* MediaTableViewCell.h */,
 				C957074E1B37B3DE00C39DE7 /* MediaTableViewCell.m */,
+				C950ABE21B4A0A7F00435A49 /* LoginViewController.h */,
+				C950ABE31B4A0A7F00435A49 /* LoginViewController.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				C957074F1B37B3DE00C39DE7 /* MediaTableViewCell.m in Sources */,
 				C94731DC1B376BCA007646DA /* Media.m in Sources */,
 				C957074C1B3676B000C39DE7 /* ImagesTableViewController.m in Sources */,
+				C950ABE41B4A0A7F00435A49 /* LoginViewController.m in Sources */,
 				C94731E21B376D49007646DA /* DataSource.m in Sources */,
 				C95707151B3673B300C39DE7 /* AppDelegate.m in Sources */,
 				C95707121B3673B300C39DE7 /* main.m in Sources */,
