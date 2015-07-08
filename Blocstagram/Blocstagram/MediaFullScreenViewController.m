@@ -54,6 +54,11 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+    
+    
+    
+//    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(longPressFired:)];
+//    self.navigationItem.rightBarButtonItem = shareButton;
 }
 
 - (void) viewWillLayoutSubviews {
