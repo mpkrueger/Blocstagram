@@ -55,6 +55,10 @@
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (storedMediaItems.count > 0) {
+                        [self requestNewItemsWithCompletionHandler:^(NSError *error) {
+                            NSLog(@"success");
+                        }];
+                        
                         NSMutableArray *mutableMediaItems = [storedMediaItems mutableCopy];
                         
                         [self willChangeValueForKey:@"mediaItems"];
