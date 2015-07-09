@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Matt Krueger. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class Media;
 
@@ -23,5 +23,6 @@ typedef void (^NewItemCompletionBlock)(NSError *error);
 - (void) deleteMediaItem:(Media *)item;
 - (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
 - (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
+- (void) shareMediaItem:(Media *)mediaItem withViewController:(UIViewController *)viewController;
 
 @end

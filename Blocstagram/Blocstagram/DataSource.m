@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSString *accessToken;
 @property (nonatomic, assign) BOOL thereAreNoMoreOlderMessages;
 
+
 @end
 
 @implementation DataSource
@@ -212,7 +213,27 @@
         });
     }
 }
-     
+
+- (void) shareMediaItem:(Media *)mediaItem withViewController:(UIViewController *)viewController {
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    if (mediaItem.caption.length > 0) {
+        [itemsToShare addObject:mediaItem.caption];
+    }
+    
+    if (mediaItem.image) {
+        [itemsToShare addObject:mediaItem.image];
+    }
+    
+    if (itemsToShare > 0) {
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        [viewController presentViewController:activityVC animated:YES completion:nil];
+    }
+}
+
+
+//  TODO:   [[DataSource sharedInstance] shareMediaItem:(Media *)mediaItem presentingViewController:(UIViewController *)viewController]
+
 - (void) downloadImageForMediaItem:(Media *)mediaItem {
     if (mediaItem.mediaURL &&  !mediaItem.image) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{

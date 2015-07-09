@@ -8,12 +8,14 @@
 
 #import "MediaFullScreenViewController.h"
 #import "Media.h"
+#import "DataSource.h"
 
 @interface MediaFullScreenViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) Media *media;
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
+@property (nonatomic, strong) UIButton *shareButton;
 
 @end
 
@@ -55,10 +57,13 @@
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
     
+    // add UI button to the top right corner
     
+    self.shareButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.shareButton setTitle:NSLocalizedString(@"Share", @"Share command") forState:UIControlStateNormal];
+    [self.shareButton addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
     
-//    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self action:@selector(longPressFired:)];
-//    self.navigationItem.rightBarButtonItem = shareButton;
+    [self.view addSubview:self.shareButton];
 }
 
 - (void) viewWillLayoutSubviews {
@@ -75,6 +80,10 @@
     
     self.scrollView.minimumZoomScale = minScale;
     self.scrollView.maximumZoomScale = 1;
+    
+    CGFloat buttonWidth = CGRectGetWidth(self.view.bounds) / 4;
+    CGFloat itemHeight = 50;
+    self.shareButton.frame = CGRectMake(CGRectGetWidth(self.view.bounds) - buttonWidth, 0, buttonWidth, itemHeight);
 }
 
 - (void) centerScrollView {
@@ -98,12 +107,16 @@
     self.imageView.frame = contentsFrame;
 }
 
+- (void) share:(id)sender {
+    [[DataSource sharedInstance] shareMediaItem:self.media withViewController:self];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UIScrollViewDelegate
+#pragma mark -buUIScrollViewDelegate
 
 - (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
@@ -141,6 +154,7 @@
         [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
     }
 }
+
 
 /*
 #pragma mark - Navigation
