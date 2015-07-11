@@ -38,14 +38,15 @@
         maskLayer.frame = _circleLayer.bounds;
         _circleLayer.mask = maskLayer;
         
-        CFTimeInterval animationDuration = 1;
+        CFTimeInterval animationDuration = 10;
         CAMediaTimingFunction *linearCurve = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+        CAMediaTimingFunction *easeIn = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
         animation.fromValue = @0;
         animation.toValue = @(M_PI*2);
         animation.duration = animationDuration;
-        animation.timingFunction = linearCurve;
+        animation.timingFunction = easeIn;
         animation.removedOnCompletion = NO;
         animation.repeatCount = INFINITY;
         animation.fillMode = kCAFillModeForwards;
@@ -59,7 +60,7 @@
         animationGroup.timingFunction = linearCurve;
         
         CABasicAnimation *strokeStartAnimation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-        strokeStartAnimation.fromValue = @0.015;
+        strokeStartAnimation.fromValue = @0.15;
         strokeStartAnimation.toValue = @0.515;
         
         CABasicAnimation *strokeEndAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];

@@ -45,6 +45,9 @@
         
         self.comments = commentsArray;
         
+        self.likesCount = mediaDictionary[@"likes"][@"count"];
+//        NSLog(@"There are %@ likes", self.likesCount);
+        
         BOOL userHasLiked = [mediaDictionary[@"user_has_liked"] boolValue];
         
         self.likeState = userHasLiked ? LikeStateLiked : LikeStateNotLiked;
@@ -75,6 +78,7 @@
         self.caption = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(caption))];
         self.comments = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(comments))];
         self.likeState = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(likeState))];
+        self.likesCount = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(likesCount))];
     }
     
     return self;
@@ -88,6 +92,7 @@
     [aCoder encodeObject:self.caption forKey:NSStringFromSelector(@selector(caption))];
     [aCoder encodeObject:self.comments forKey:NSStringFromSelector(@selector(comments))];
     [aCoder encodeInteger:self.likeState forKey:NSStringFromSelector(@selector(likeState))];
+    [aCoder encodeObject:self.likesCount forKey:NSStringFromSelector(@selector(likesCount))];
 }
 
 @end

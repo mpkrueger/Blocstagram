@@ -269,6 +269,20 @@
     return dataPath;
 }
 
+//- (NSInteger) getCountOfLikes:(Media *)mediaItem {
+//    NSString *urlString = [NSString stringWithFormat:@"media/%@/likes", mediaItem.idNumber];
+//    NSDictionary *parameters = @{@"access_token": self.accessToken};
+//    
+//    return [self.instagramOperationManager GET:urlString parameters:parameters {
+//        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+//            [self parseDataFromFeedDictionary:responseObject fromRequestWithParameters:parameters];
+//            NSArray *likesArray = responseObject[@"data"];
+//            NSInteger countOfLikes = likesArray.count;
+//            return countOfLikes;
+//        }
+//    }];
+//}
+
 #pragma mark - Liking Media Items
 
 - (void) toggleLikeOnMediaItem:(Media *)mediaItem withCompletionHandler:(void (^)(void))completionHandler {
