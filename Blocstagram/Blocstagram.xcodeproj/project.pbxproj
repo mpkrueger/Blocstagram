@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A87B73B32AC459E4647BBEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F074315578DC1068DAFC40CB /* libPods.a */; };
+		C90DA1101B50B9DE00180B1B /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DA10F1B50B9DE00180B1B /* CircleSpinnerView.m */; };
+		C90DA1131B50D44300180B1B /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DA1121B50D44300180B1B /* LikeButton.m */; };
 		C90DF03E1B4CD48900C3039B /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DF03D1B4CD48900C3039B /* MediaFullScreenViewController.m */; };
 		C94731D91B376B16007646DA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731D81B376B16007646DA /* User.m */; };
 		C94731DC1B376BCA007646DA /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = C94731DB1B376BCA007646DA /* Media.m */; };
@@ -46,6 +48,10 @@
 /* Begin PBXFileReference section */
 		12761F4EA23FCDEE945A5F9D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C727766D302C55B0DEB01567 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C90DA10E1B50B9DE00180B1B /* CircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSpinnerView.h; sourceTree = "<group>"; };
+		C90DA10F1B50B9DE00180B1B /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleSpinnerView.m; sourceTree = "<group>"; };
+		C90DA1111B50D44300180B1B /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
+		C90DA1121B50D44300180B1B /* LikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeButton.m; sourceTree = "<group>"; };
 		C90DF03C1B4CD48900C3039B /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaFullScreenViewController.h; sourceTree = "<group>"; };
 		C90DF03D1B4CD48900C3039B /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		C94731D71B376B16007646DA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -166,6 +172,10 @@
 				C90DF03D1B4CD48900C3039B /* MediaFullScreenViewController.m */,
 				C950ABE21B4A0A7F00435A49 /* LoginViewController.h */,
 				C950ABE31B4A0A7F00435A49 /* LoginViewController.m */,
+				C90DA10E1B50B9DE00180B1B /* CircleSpinnerView.h */,
+				C90DA10F1B50B9DE00180B1B /* CircleSpinnerView.m */,
+				C90DA1111B50D44300180B1B /* LikeButton.h */,
+				C90DA1121B50D44300180B1B /* LikeButton.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -358,12 +368,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C90DF03E1B4CD48900C3039B /* MediaFullScreenViewController.m in Sources */,
+				C90DA1101B50B9DE00180B1B /* CircleSpinnerView.m in Sources */,
 				C94731D91B376B16007646DA /* User.m in Sources */,
 				C94731DF1B376CB3007646DA /* Comment.m in Sources */,
 				C957074F1B37B3DE00C39DE7 /* MediaTableViewCell.m in Sources */,
 				C94731DC1B376BCA007646DA /* Media.m in Sources */,
 				C957074C1B3676B000C39DE7 /* ImagesTableViewController.m in Sources */,
 				C950ABE41B4A0A7F00435A49 /* LoginViewController.m in Sources */,
+				C90DA1131B50D44300180B1B /* LikeButton.m in Sources */,
 				C94731E21B376D49007646DA /* DataSource.m in Sources */,
 				C95707151B3673B300C39DE7 /* AppDelegate.m in Sources */,
 				C95707121B3673B300C39DE7 /* main.m in Sources */,

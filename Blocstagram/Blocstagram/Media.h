@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LikeButton.h"
 
 typedef NS_ENUM(NSInteger, MediaDownloadState) {
-    MediaDownloadStateNeedsImage = 0,
-    MediaDownloadStateDownloadInProgress = 1,
-    MediaDownloadStateNonRecoverableError = 2,
-    MediaDownloadStateHasImage = 3
+    MediaDownloadStateNeedsImage            = 0,
+    MediaDownloadStateDownloadInProgress    = 1,
+    MediaDownloadStateNonRecoverableError   = 2,
+    MediaDownloadStateHasImage              = 3
 };
 
 @class User;
@@ -28,5 +29,6 @@ typedef NS_ENUM(NSInteger, MediaDownloadState) {
 @property (nonatomic, strong) NSString *caption;
 @property (nonatomic, strong) NSArray *comments;
 @property (nonatomic, assign) MediaDownloadState downloadState;
+@property (nonatomic, assign) LikeState likeState;
 
 @end
