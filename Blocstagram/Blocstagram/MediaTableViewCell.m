@@ -182,7 +182,7 @@ static NSParagraphStyle *paragraphStyle;
 }
 
 - (NSAttributedString *) countOfLikesString {
-    NSString *countOfLikes = [NSString stringWithFormat:@"%@", self.mediaItem.likesCount];
+    NSString *countOfLikes = [NSString stringWithFormat:@"%li", (long)self.mediaItem.likesCount];
     NSMutableAttributedString *likesString = [[NSMutableAttributedString alloc] initWithString:countOfLikes attributes:@{NSFontAttributeName : [lightFont fontWithSize:15], NSParagraphStyleAttributeName : paragraphStyle}];
     return likesString;
 }
