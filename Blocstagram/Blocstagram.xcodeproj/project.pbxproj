@@ -34,6 +34,8 @@
 		C957074C1B3676B000C39DE7 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C957074B1B3676B000C39DE7 /* ImagesTableViewController.m */; };
 		C957074F1B37B3DE00C39DE7 /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C957074E1B37B3DE00C39DE7 /* MediaTableViewCell.m */; };
 		C95FD8211B52EE0F00FBC258 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C95FD8201B52EE0F00FBC258 /* ComposeCommentView.m */; };
+		C9A5F4501B5364FC00E772B7 /* CameraToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F44F1B5364FC00E772B7 /* CameraToolbar.m */; };
+		C9A5F4531B53710800E772B7 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F4521B53710800E772B7 /* CameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,10 @@
 		C957074E1B37B3DE00C39DE7 /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
 		C95FD81F1B52EE0F00FBC258 /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
 		C95FD8201B52EE0F00FBC258 /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
+		C9A5F44E1B5364FC00E772B7 /* CameraToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraToolbar.h; sourceTree = "<group>"; };
+		C9A5F44F1B5364FC00E772B7 /* CameraToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraToolbar.m; sourceTree = "<group>"; };
+		C9A5F4511B53710800E772B7 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		C9A5F4521B53710800E772B7 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		F074315578DC1068DAFC40CB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -181,6 +187,10 @@
 				C90DA10F1B50B9DE00180B1B /* CircleSpinnerView.m */,
 				C90DA1111B50D44300180B1B /* LikeButton.h */,
 				C90DA1121B50D44300180B1B /* LikeButton.m */,
+				C9A5F44E1B5364FC00E772B7 /* CameraToolbar.h */,
+				C9A5F44F1B5364FC00E772B7 /* CameraToolbar.m */,
+				C9A5F4511B53710800E772B7 /* CameraViewController.h */,
+				C9A5F4521B53710800E772B7 /* CameraViewController.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -372,12 +382,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A5F4531B53710800E772B7 /* CameraViewController.m in Sources */,
 				C90DF03E1B4CD48900C3039B /* MediaFullScreenViewController.m in Sources */,
 				C90DA1101B50B9DE00180B1B /* CircleSpinnerView.m in Sources */,
 				C94731D91B376B16007646DA /* User.m in Sources */,
 				C94731DF1B376CB3007646DA /* Comment.m in Sources */,
 				C957074F1B37B3DE00C39DE7 /* MediaTableViewCell.m in Sources */,
 				C94731DC1B376BCA007646DA /* Media.m in Sources */,
+				C9A5F4501B5364FC00E772B7 /* CameraToolbar.m in Sources */,
 				C957074C1B3676B000C39DE7 /* ImagesTableViewController.m in Sources */,
 				C950ABE41B4A0A7F00435A49 /* LoginViewController.m in Sources */,
 				C90DA1131B50D44300180B1B /* LikeButton.m in Sources */,
