@@ -36,6 +36,7 @@
 		C95FD8211B52EE0F00FBC258 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C95FD8201B52EE0F00FBC258 /* ComposeCommentView.m */; };
 		C9A5F4501B5364FC00E772B7 /* CameraToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F44F1B5364FC00E772B7 /* CameraToolbar.m */; };
 		C9A5F4531B53710800E772B7 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F4521B53710800E772B7 /* CameraViewController.m */; };
+		C9AC3E351B54C263008F8532 /* UIImage+ImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC3E341B54C263008F8532 /* UIImage+ImageUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		C9A5F44F1B5364FC00E772B7 /* CameraToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraToolbar.m; sourceTree = "<group>"; };
 		C9A5F4511B53710800E772B7 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		C9A5F4521B53710800E772B7 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		C9AC3E331B54C263008F8532 /* UIImage+ImageUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageUtilities.h"; sourceTree = "<group>"; };
+		C9AC3E341B54C263008F8532 /* UIImage+ImageUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageUtilities.m"; sourceTree = "<group>"; };
 		F074315578DC1068DAFC40CB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -191,6 +194,8 @@
 				C9A5F44F1B5364FC00E772B7 /* CameraToolbar.m */,
 				C9A5F4511B53710800E772B7 /* CameraViewController.h */,
 				C9A5F4521B53710800E772B7 /* CameraViewController.m */,
+				C9AC3E331B54C263008F8532 /* UIImage+ImageUtilities.h */,
+				C9AC3E341B54C263008F8532 /* UIImage+ImageUtilities.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				TargetAttributes = {
 					C957070B1B3673B300C39DE7 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 9FH4P7VAQH;
 					};
 					C95707241B3673B300C39DE7 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -396,6 +402,7 @@
 				C94731E21B376D49007646DA /* DataSource.m in Sources */,
 				C95FD8211B52EE0F00FBC258 /* ComposeCommentView.m in Sources */,
 				C95707151B3673B300C39DE7 /* AppDelegate.m in Sources */,
+				C9AC3E351B54C263008F8532 /* UIImage+ImageUtilities.m in Sources */,
 				C95707121B3673B300C39DE7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,9 +524,12 @@
 			baseConfigurationReference = 12761F4EA23FCDEE945A5F9D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blocstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -528,9 +538,12 @@
 			baseConfigurationReference = C727766D302C55B0DEB01567 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blocstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
