@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+ImageUtilities.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation UIImage (ImageUtilities)
 
@@ -123,6 +124,22 @@
     UIImage *image = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
     CGImageRelease(imageRef);
     return image;
+}
+
+- (UIImage *) imageByScalingToSize:(CGSize)size andCroppingWithRect:(CGRect)rect {
+    rect.size.width *= self.scale;
+    rect.size.height *= self.scale;
+    rect.origin.x *= self.scale;
+    rect.origin.y *= self.scale;
+    
+    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+    UIImage *image = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
+    
+    image = [image imageResizedToMatchAspectRatioOfSize:size];
+    image = [image imageCroppedToRect:rect];
+    
+    return image;
+    
 }
 
 @end
