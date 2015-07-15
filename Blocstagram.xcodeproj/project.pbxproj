@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A87B73B32AC459E4647BBEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F074315578DC1068DAFC40CB /* libPods.a */; };
+		7F545B039A7EB97BD1707367 /* libPods-Blocstagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96250EC1748A2EC1083AF54B /* libPods-Blocstagram.a */; };
 		C90DA1101B50B9DE00180B1B /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DA10F1B50B9DE00180B1B /* CircleSpinnerView.m */; };
 		C90DA1131B50D44300180B1B /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DA1121B50D44300180B1B /* LikeButton.m */; };
 		C90DF03E1B4CD48900C3039B /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DF03D1B4CD48900C3039B /* MediaFullScreenViewController.m */; };
@@ -36,7 +38,7 @@
 		C9A5F4501B5364FC00E772B7 /* CameraToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F44F1B5364FC00E772B7 /* CameraToolbar.m */; };
 		C9A5F4531B53710800E772B7 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A5F4521B53710800E772B7 /* CameraViewController.m */; };
 		C9AC3E351B54C263008F8532 /* UIImage+ImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC3E341B54C263008F8532 /* UIImage+ImageUtilities.m */; };
-		F8912383450173A03C131AB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F074315578DC1068DAFC40CB /* libPods.a */; };
+		C9D8DAC11B56D7770029DD00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9D8DAC01B56D7770029DD00 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12761F4EA23FCDEE945A5F9D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		C727766D302C55B0DEB01567 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		96250EC1748A2EC1083AF54B /* libPods-Blocstagram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Blocstagram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90DA10E1B50B9DE00180B1B /* CircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSpinnerView.h; sourceTree = "<group>"; };
 		C90DA10F1B50B9DE00180B1B /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleSpinnerView.m; sourceTree = "<group>"; };
 		C90DA1111B50D44300180B1B /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		C957071C1B3673B300C39DE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C957071F1B3673B300C39DE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C95707251B3673B300C39DE7 /* BlocstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C957072A1B3673B300C39DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C957072B1B3673B300C39DE7 /* BlocstagramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocstagramTests.m; sourceTree = "<group>"; };
 		C95707361B3675F600C39DE7 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		C95707371B3675F600C39DE7 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -100,8 +100,10 @@
 		C9A5F4521B53710800E772B7 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		C9AC3E331B54C263008F8532 /* UIImage+ImageUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageUtilities.h"; sourceTree = "<group>"; };
 		C9AC3E341B54C263008F8532 /* UIImage+ImageUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageUtilities.m"; sourceTree = "<group>"; };
+		C9D8DAC01B56D7770029DD00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA7DADE0CB4AAE4861345C82 /* Pods-Blocstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blocstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blocstagram/Pods-Blocstagram.release.xcconfig"; sourceTree = "<group>"; };
 		F074315578DC1068DAFC40CB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6CCF54D1F40961185B70035 /* libPods-Blocstagram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Blocstagram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A69292C48154DBF763BB8C /* Pods-Blocstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blocstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blocstagram/Pods-Blocstagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8912383450173A03C131AB0 /* libPods.a in Frameworks */,
+				3A87B73B32AC459E4647BBEC /* libPods.a in Frameworks */,
+				7F545B039A7EB97BD1707367 /* libPods-Blocstagram.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +129,8 @@
 		434AF215BE79AA408C54D03E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				12761F4EA23FCDEE945A5F9D /* Pods.debug.xcconfig */,
-				C727766D302C55B0DEB01567 /* Pods.release.xcconfig */,
+				F6A69292C48154DBF763BB8C /* Pods-Blocstagram.debug.xcconfig */,
+				DA7DADE0CB4AAE4861345C82 /* Pods-Blocstagram.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -136,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				F074315578DC1068DAFC40CB /* libPods.a */,
-				F6CCF54D1F40961185B70035 /* libPods-Blocstagram.a */,
+				96250EC1748A2EC1083AF54B /* libPods-Blocstagram.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,7 +226,7 @@
 		C95707291B3673B300C39DE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C957072A1B3673B300C39DE7 /* Info.plist */,
+				C9D8DAC01B56D7770029DD00 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D8DAC11B56D7770029DD00 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blocstagram/Pods-Blocstagram-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7DC0A4D4099ED520BABF018C /* Check Pods Manifest.lock */ = {
@@ -523,13 +527,14 @@
 		};
 		C95707301B3673B300C39DE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12761F4EA23FCDEE945A5F9D /* Pods.debug.xcconfig */;
+			baseConfigurationReference = F6A69292C48154DBF763BB8C /* Pods-Blocstagram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blocstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -537,13 +542,14 @@
 		};
 		C95707311B3673B300C39DE7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C727766D302C55B0DEB01567 /* Pods.release.xcconfig */;
+			baseConfigurationReference = DA7DADE0CB4AAE4861345C82 /* Pods-Blocstagram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blocstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
