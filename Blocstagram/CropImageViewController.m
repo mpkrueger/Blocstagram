@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) CropBox *cropBox;
 @property (nonatomic, assign) BOOL hasLoadedOnce;
+@property (nonatomic, strong) UIToolbar *topView;
+@property (nonatomic, strong) UIToolbar *bottomView;
 
 @end
 
@@ -39,7 +41,19 @@
     
     self.view.clipsToBounds = YES;
     
-    [self.view addSubview:self.cropBox];
+    UIColor *whiteBG = [UIColor colorWithRed:.888 green:.888 blue:.888 alpha:1.0];
+    self.topView = [UIToolbar new];
+    self.topView.barTintColor = whiteBG;
+    self.topView.alpha = 0.5;
+    self.bottomView = [UIToolbar new];
+    self.bottomView.barTintColor = whiteBG;
+    self.bottomView.alpha = 0.5;
+    
+    NSArray *views = @[self.cropBox, self.topView, self.bottomView];
+    
+    for (UIView *view in views) {
+        [self.view addSubview:view];
+    }
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Crop", @"Crop command") style:UIBarButtonItemStyleDone target:self action:@selector(cropPressed:)];
     
@@ -65,6 +79,13 @@
     self.cropBox.center = CGPointMake(size.width / 2, size.height / 2);
     self.scrollView.frame = self.cropBox.frame;
     self.scrollView.clipsToBounds = NO;
+    
+    CGFloat width = CGRectGetWidth(self.view.bounds);
+    self.topView.frame = CGRectMake(0, self.topLayoutGuide.length, width, ((size.height / 2) - (edgeSize / 2) - self.topLayoutGuide.length));
+    
+    CGFloat yOriginOfBottomView = CGRectGetMaxY(self.topView.frame) + edgeSize;
+    CGFloat heightOfBottomView = CGRectGetHeight(self.view.frame) - yOriginOfBottomView;
+    self.bottomView.frame = CGRectMake(0, yOriginOfBottomView, width, heightOfBottomView);
     
     [self recalculateZoomScale];
     

@@ -14,7 +14,7 @@
 #import "MediaTableViewCell.h"
 #import "MediaFullScreenViewController.h"
 #import "CameraViewController.h"
-#import "ImageLibraryCollectionViewController.h"
+#import "ImageLibraryViewController.h"
 
 @interface ImagesTableViewController () <MediaTableViewCellDelegate, CameraViewControllerDelegate, ImageLibraryViewControllerDelegate>
 
@@ -51,7 +51,7 @@
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] ||
-        [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(cameraPressed:)];
         self.navigationItem.rightBarButtonItem = cameraButton;
     }
@@ -312,7 +312,7 @@
         CameraViewController *cameraVC = [[CameraViewController alloc] init];
         cameraVC.delegate = self;
         imageVC = cameraVC;
-    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         ImageLibraryViewController *imageLibraryVC = [[ImageLibraryViewController alloc] init];
         imageLibraryVC.delegate = self;
         imageVC = imageLibraryVC;

@@ -11,7 +11,7 @@
 #import "CameraToolbar.h"
 #import "UIImage+ImageUtilities.h"
 #import "CropBox.h"
-#import "ImageLibraryCollectionViewController.h"
+#import "ImageLibraryViewController.h"
 
 @interface CameraViewController () <CameraToolbarDelegate, ImageLibraryViewControllerDelegate>
 

@@ -1,12 +1,12 @@
 //
-//  ImageLibraryCollectionViewController.m
+//  ImageLibraryViewController.m
 //  Blocstagram
 //
 //  Created by Matt Krueger on 7/16/15.
 //  Copyright (c) 2015 Matt Krueger. All rights reserved.
 //
 
-#import "ImageLibraryCollectionViewController.h"
+#import "ImageLibraryViewController.h"
 #import <Photos/Photos.h>
 #import "CropImageViewController.h"
 
@@ -45,15 +45,15 @@
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    CGFloat width = CGRectGetWidth(self.view.frame);
-    CGFloat minWidth = 100;
+    CGFloat width = CGRectGetWidth(self.view.frame) - 6;
+    CGFloat minWidth = 75;
     NSInteger divisor = width / minWidth;
     CGFloat cellSize = width / divisor;
     
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
     flowLayout.itemSize = CGSizeMake(cellSize, cellSize);
-    flowLayout.minimumInteritemSpacing = 0;
-    flowLayout.minimumLineSpacing = 0;
+    flowLayout.minimumInteritemSpacing = 2;
+    flowLayout.minimumLineSpacing = 2;
 }
 
 - (void) loadAssets {

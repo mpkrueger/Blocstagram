@@ -1,5 +1,5 @@
 //
-//  ImageLibraryCollectionViewController.h
+//  ImageLibraryViewController.h
 //  Blocstagram
 //
 //  Created by Matt Krueger on 7/16/15.
