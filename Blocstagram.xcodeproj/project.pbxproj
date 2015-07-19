@@ -43,6 +43,7 @@
 		C9D8DAC11B56D7770029DD00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9D8DAC01B56D7770029DD00 /* Info.plist */; };
 		C9F052C81B59FEFA00A9E15C /* PostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F052C71B59FEFA00A9E15C /* PostToInstagramViewController.m */; };
 		C9F052CA1B5C56B800A9E15C /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F052C91B5C56B800A9E15C /* UserTests.m */; };
+		C9F052CC1B5C5A9A00A9E15C /* MediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F052CB1B5C5A9A00A9E15C /* MediaTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		C9F052C61B59FEFA00A9E15C /* PostToInstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostToInstagramViewController.h; sourceTree = "<group>"; };
 		C9F052C71B59FEFA00A9E15C /* PostToInstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostToInstagramViewController.m; sourceTree = "<group>"; };
 		C9F052C91B5C56B800A9E15C /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
+		C9F052CB1B5C5A9A00A9E15C /* MediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTests.m; sourceTree = "<group>"; };
 		F074315578DC1068DAFC40CB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6F309506F3C7DD0DD285B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,6 +242,7 @@
 				C957072B1B3673B300C39DE7 /* BlocstagramTests.m */,
 				C95707291B3673B300C39DE7 /* Supporting Files */,
 				C9F052C91B5C56B800A9E15C /* UserTests.m */,
+				C9F052CB1B5C5A9A00A9E15C /* MediaTests.m */,
 			);
 			path = BlocstagramTests;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F052CC1B5C5A9A00A9E15C /* MediaTests.m in Sources */,
 				C9F052CA1B5C56B800A9E15C /* UserTests.m in Sources */,
 				C957072C1B3673B300C39DE7 /* BlocstagramTests.m in Sources */,
 			);
