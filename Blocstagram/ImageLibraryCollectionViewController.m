@@ -61,6 +61,7 @@
     options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
     
     self.result = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:options];
+    [self.collectionView reloadData];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -71,7 +72,6 @@
             if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self loadAssets];
-                    [self.collectionView reloadData];
                 });
             }
         }];
@@ -119,7 +119,7 @@
     return cell;
 }
 
-- (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     PHAsset *asset = self.result[indexPath.row];
     
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
