@@ -11,6 +11,7 @@
 		C90D86561B5809F90000178B /* CropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D86551B5809F90000178B /* CropBox.m */; };
 		C90D86591B580C020000178B /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D86581B580C020000178B /* CropImageViewController.m */; };
 		C90D865C1B580C5B0000178B /* ImageLibraryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D865B1B580C5B0000178B /* ImageLibraryCollectionViewController.m */; };
+		C90D865F1B5ABC630000178B /* FilteredImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C90D865E1B5ABC630000178B /* FilteredImageCollectionViewCell.m */; };
 		C90DA1101B50B9DE00180B1B /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DA10F1B50B9DE00180B1B /* CircleSpinnerView.m */; };
 		C90DA1131B50D44300180B1B /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DA1121B50D44300180B1B /* LikeButton.m */; };
 		C90DF03E1B4CD48900C3039B /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90DF03D1B4CD48900C3039B /* MediaFullScreenViewController.m */; };
@@ -63,6 +64,8 @@
 		C90D86581B580C020000178B /* CropImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropImageViewController.m; sourceTree = "<group>"; };
 		C90D865A1B580C5B0000178B /* ImageLibraryCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLibraryCollectionViewController.h; sourceTree = "<group>"; };
 		C90D865B1B580C5B0000178B /* ImageLibraryCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLibraryCollectionViewController.m; sourceTree = "<group>"; };
+		C90D865D1B5ABC630000178B /* FilteredImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredImageCollectionViewCell.h; sourceTree = "<group>"; };
+		C90D865E1B5ABC630000178B /* FilteredImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilteredImageCollectionViewCell.m; sourceTree = "<group>"; };
 		C90DA10E1B50B9DE00180B1B /* CircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSpinnerView.h; sourceTree = "<group>"; };
 		C90DA10F1B50B9DE00180B1B /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleSpinnerView.m; sourceTree = "<group>"; };
 		C90DA1111B50D44300180B1B /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				C90D865B1B580C5B0000178B /* ImageLibraryCollectionViewController.m */,
 				C9F052C61B59FEFA00A9E15C /* PostToInstagramViewController.h */,
 				C9F052C71B59FEFA00A9E15C /* PostToInstagramViewController.m */,
+				C90D865D1B5ABC630000178B /* FilteredImageCollectionViewCell.h */,
+				C90D865E1B5ABC630000178B /* FilteredImageCollectionViewCell.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				C90D86591B580C020000178B /* CropImageViewController.m in Sources */,
 				C957074F1B37B3DE00C39DE7 /* MediaTableViewCell.m in Sources */,
 				C94731DC1B376BCA007646DA /* Media.m in Sources */,
+				C90D865F1B5ABC630000178B /* FilteredImageCollectionViewCell.m in Sources */,
 				C9A5F4501B5364FC00E772B7 /* CameraToolbar.m in Sources */,
 				C90D865C1B580C5B0000178B /* ImageLibraryCollectionViewController.m in Sources */,
 				C957074C1B3676B000C39DE7 /* ImagesTableViewController.m in Sources */,

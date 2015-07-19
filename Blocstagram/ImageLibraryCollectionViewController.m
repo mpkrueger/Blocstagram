@@ -119,7 +119,7 @@
     return cell;
 }
 
-- (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     PHAsset *asset = self.result[indexPath.row];
     
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
