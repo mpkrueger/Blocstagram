@@ -44,6 +44,11 @@
 		C9F052C81B59FEFA00A9E15C /* PostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F052C71B59FEFA00A9E15C /* PostToInstagramViewController.m */; };
 		C9F052CA1B5C56B800A9E15C /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F052C91B5C56B800A9E15C /* UserTests.m */; };
 		C9F052CC1B5C5A9A00A9E15C /* MediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F052CB1B5C5A9A00A9E15C /* MediaTests.m */; };
+		C9F052CE1B5F460800A9E15C /* CommentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F052CD1B5F460800A9E15C /* CommentTests.m */; };
+		C9F052D21B5F4A8600A9E15C /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9F052CF1B5F4A8600A9E15C /* 1.jpg */; };
+		C9F052D31B5F4A8600A9E15C /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9F052D01B5F4A8600A9E15C /* 2.jpg */; };
+		C9F052D41B5F4A8600A9E15C /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9F052D11B5F4A8600A9E15C /* 3.jpg */; };
+		C9F052D61B5F4AD400A9E15C /* MediaTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F052D51B5F4AD400A9E15C /* MediaTableViewCellTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +122,11 @@
 		C9F052C71B59FEFA00A9E15C /* PostToInstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostToInstagramViewController.m; sourceTree = "<group>"; };
 		C9F052C91B5C56B800A9E15C /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
 		C9F052CB1B5C5A9A00A9E15C /* MediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTests.m; sourceTree = "<group>"; };
+		C9F052CD1B5F460800A9E15C /* CommentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentTests.m; path = ../CommentTests.m; sourceTree = "<group>"; };
+		C9F052CF1B5F4A8600A9E15C /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		C9F052D01B5F4A8600A9E15C /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		C9F052D11B5F4A8600A9E15C /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		C9F052D51B5F4AD400A9E15C /* MediaTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCellTests.m; sourceTree = "<group>"; };
 		F074315578DC1068DAFC40CB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6F309506F3C7DD0DD285B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +253,8 @@
 				C95707291B3673B300C39DE7 /* Supporting Files */,
 				C9F052C91B5C56B800A9E15C /* UserTests.m */,
 				C9F052CB1B5C5A9A00A9E15C /* MediaTests.m */,
+				C9F052CD1B5F460800A9E15C /* CommentTests.m */,
+				C9F052D51B5F4AD400A9E15C /* MediaTableViewCellTests.m */,
 			);
 			path = BlocstagramTests;
 			sourceTree = "<group>";
@@ -250,6 +262,9 @@
 		C95707291B3673B300C39DE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C9F052CF1B5F4A8600A9E15C /* 1.jpg */,
+				C9F052D01B5F4A8600A9E15C /* 2.jpg */,
+				C9F052D11B5F4A8600A9E15C /* 3.jpg */,
 				C9D8DAC01B56D7770029DD00 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -374,7 +389,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F052D31B5F4A8600A9E15C /* 2.jpg in Resources */,
 				C9D8DAC11B56D7770029DD00 /* Info.plist in Resources */,
+				C9F052D21B5F4A8600A9E15C /* 1.jpg in Resources */,
+				C9F052D41B5F4A8600A9E15C /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +466,8 @@
 				C9F052CC1B5C5A9A00A9E15C /* MediaTests.m in Sources */,
 				C9F052CA1B5C56B800A9E15C /* UserTests.m in Sources */,
 				C957072C1B3673B300C39DE7 /* BlocstagramTests.m in Sources */,
+				C9F052D61B5F4AD400A9E15C /* MediaTableViewCellTests.m in Sources */,
+				C9F052CE1B5F460800A9E15C /* CommentTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

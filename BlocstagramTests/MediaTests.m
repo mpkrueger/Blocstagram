@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "Media.h"
+#import "User.h"
+#import "Comment.h"
 
 @interface MediaTests : XCTestCase
 
@@ -27,27 +29,37 @@
 
 - (void) testThatInitializationWorks
 {
-    NSDictionary *sourceDictionary = @{@"id": @"123456",
-                                       @"user": @{@"id": @"123",
-                                                  @"username": @"d'oh",
-                                                  @"full_name": @"Homer Simpson",
-                                                  @"profile_picture": @"http://www.example.com/example.jpg"},
-                                       @"image": @{@"standard_resolution": @{@"url": @"http://www.example.com/example.jpg"}},
+    NSDictionary *userDictionary = @{@"id": @"123456",
+                                     @"username": @"d'oh",
+                                     @"full_name": @"Homer Simpson",
+                                     @"profile_picture": @"http://www.example.com/example.jpg"};
+    
+    NSDictionary *fromUserDictionary = @{@"username": @"matt",
+                                         @"full_name": @"matt k",
+                                         @"id": @"333",
+                                         @"profile_picture": @"http://www.example.com/example.jpg"};
+    
+    NSDictionary *commentsDictionary = @{@"data": @{@"id": @"555",
+                                                    @"from": fromUserDictionary,
+                                                    @"text": @"wow"}};
+
+    
+    NSDictionary *sourceDictionary = @{@"id": @"123",
+                                       @"user": userDictionary,
+                                       @"images": @{@"standard_resolution": @{@"url": @"http://www.example.com/example.jpg"}},
                                        @"caption": @{@"text": @"nice"},
-                                       @"comments": @{@"data": @{@"id": @"5",
-                                                                 @"from": @{@"username": @"matt",
-                                                                            @"full_name": @"matt k",
-                                                                            @"id": @"3",
-                                                                            @"profile_picture": @"http://www.example.com/example.jpg"},
-                                                                 @"text": @"wow"}},
-                                       @"user_has_liked": @"true"};
+                                       @"comments": @{@"data": @[commentsDictionary]},
+                                       @"user_has_liked": @YES};
+
+    NSString *standardResolutionImageURLString = sourceDictionary[@"images"][@"standard_resolution"][@"url"];
+    NSURL *standardResolutionURL = [NSURL URLWithString:standardResolutionImageURLString];
+    
     Media *testMedia = [[Media alloc] initWithDictionary:sourceDictionary];
     
     XCTAssertEqualObjects(testMedia.idNumber, sourceDictionary[@"id"], @"The ID number should be equal");
-    XCTAssertEqualObjects(testMedia.user, sourceDictionary[@"user"], @"The user should be equal");
-    XCTAssertEqualObjects(testMedia.mediaURL, sourceDictionary[@"images"][@"standard_resolution"][@"url"], @"The media URL should be equal");
+    XCTAssertEqualObjects(testMedia.mediaURL, standardResolutionURL, @"The media URL should be equal");
     XCTAssertEqualObjects(testMedia.caption, sourceDictionary[@"caption"][@"text"], @"The caption should be equal");
-    XCTAssertEqualObjects(testMedia.comments, sourceDictionary[@"comments"][@"data"], @"The comments should be equal");
+    XCTAssertTrue(testMedia.likeState == LikeStateLiked);
 }
 
 @end
