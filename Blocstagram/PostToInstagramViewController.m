@@ -91,6 +91,8 @@
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_previewImageView, _filterCollectionView, _sendButton);
     
     NSLayoutConstraint *imageHeightConstraint = [NSLayoutConstraint constraintWithItem:self.previewImageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:100];
+
+    self.previewImageView.translatesAutoresizingMaskIntoConstraints = YES;
     
 //    NSLayoutConstraint *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_previewImageView]|" options:0 metrics:nil views:viewsDictionary];
     
