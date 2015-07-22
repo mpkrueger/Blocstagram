@@ -12,6 +12,7 @@
 
 @interface FilteredImageCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, strong) Media *filterItem;
+- (void)setImage:(UIImage *)image;
+- (void)setTitle:(NSString *)title;
 
 @end

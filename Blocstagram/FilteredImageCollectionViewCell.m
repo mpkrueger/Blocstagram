@@ -22,12 +22,14 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.filterImageView = [[UIImageView alloc] init];
+        self.filterImageView = [[UIImageView alloc] initWithFrame:CGRectInset(CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetWidth(frame)), 5, 5)];
         self.filterTitle = [[UILabel alloc] init];
         
         for (UIView *view in @[self.filterImageView, self.filterTitle]) {
             [self.contentView addSubview:view];
         }
+        
+        self.backgroundColor = [UIColor whiteColor];
     }
     
     return self;
@@ -36,49 +38,18 @@
 - (void) layoutSubviews {
     [super layoutSubviews];
     
-    CGFloat imageHeight = self.filterItem.image.size.height / self.filterItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+    CGFloat imageHeight = self.filterImageView.image.size.height / self.filterImageView.image.size.width * CGRectGetWidth(self.contentView.bounds);
     self.filterImageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.bounds), imageHeight);
+    self.filterTitle.frame = CGRectMake(0, imageHeight, CGRectGetWidth(self.contentView.bounds), 20);
+    self.filterTitle.textAlignment = NSTextAlignmentCenter;
 }
 
+- (void) setImage:(UIImage *)image {
+    self.filterImageView.image = image;
+}
 
-    
-    //    static NSInteger imageViewTag = 1000;
-    //    static NSInteger labelTag = 1001;
-    //
-    //    UIImageView *thumbnail = (UIImageView *)[cell.contentView viewWithTag:imageViewTag];
-    //    UILabel *label = (UILabel *)[cell.contentView viewWithTag:labelTag];
-    //
-    //    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.filterCollectionView.collectionViewLayout;
-    //    CGFloat thumbnailEdgeSize = flowLayout.itemSize.width;
-    //
-    //    if (!thumbnail) {
-    //        thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, thumbnailEdgeSize, thumbnailEdgeSize)];
-    //        thumbnail.contentMode = UIViewContentModeScaleAspectFill;
-    //        thumbnail.tag = imageViewTag;
-    //        thumbnail.clipsToBounds = YES;
-    //
-    //        [cell.contentView addSubview:thumbnail];
-    //    }
-    //
-    //    if (!label) {
-    //        label = [[UILabel alloc] initWithFrame:CGRectMake(0, thumbnailEdgeSize, thumbnailEdgeSize, 20)];
-    //        label.tag = labelTag;
-    //        label.textAlignment = NSTextAlignmentCenter;
-    //        label.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:10];
-    //        [cell.contentView addSubview:label];
-    //    }
-    //
-    //    thumbnail.image = self.filterImages[indexPath.row];
-    //    label.text = self.filterTitles[indexPath.row];
-
-//- (NSAttributedString *) filterTitleString {
-//    return filterTitleString;
-//}
-
-- (void) setFilterItem:(Media *)filterItem {
-    _filterItem = filterItem;
-    self.filterImageView.image = _filterItem.image;
-//    self.filterTitle.attributedText = [self filterTitleString];
+- (void) setTitle:(NSString *)title {
+    self.filterTitle.text = title;
 }
 
 @end
