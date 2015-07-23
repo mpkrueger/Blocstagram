@@ -88,17 +88,16 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    
-
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_previewImageView, _filterCollectionView, _sendButton);
     
-    NSLayoutConstraint *imageHeightConstraint = [NSLayoutConstraint constraintWithItem:self.previewImageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:100];
-
-    self.previewImageView.translatesAutoresizingMaskIntoConstraints = YES;
+    NSLayoutConstraint *imageHeightConstraint = [NSLayoutConstraint constraintWithItem:self.previewImageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:CGRectGetWidth(self.view.bounds)];
     
-//    NSLayoutConstraint *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_previewImageView]|" options:0 metrics:nil views:viewsDictionary];
+    self.previewImageView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self.view addConstraints:@[imageHeightConstraint]];
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_previewImageView]|" options:0 metrics:nil views:viewsDictionary];
+    
+    [self.view addConstraint:imageHeightConstraint];
+    [self.view addConstraints:verticalConstraints];
     
     
 //    CGFloat edgeSize = MIN(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
