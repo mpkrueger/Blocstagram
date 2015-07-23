@@ -16,6 +16,7 @@
 #import "CameraViewController.h"
 #import "ImageLibraryCollectionViewController.h"
 #import "PostToInstagramViewController.h"
+#import "AppDelegate.h"
 
 @interface ImagesTableViewController () <MediaTableViewCellDelegate, CameraViewControllerDelegate, ImageLibraryViewControllerDelegate>
 
@@ -197,6 +198,7 @@
     
     if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular) {
         fullScreenVC.modalPresentationStyle = UIModalPresentationFormSheet;
+//        [[[UIApplication sharedApplication] delegate] window] addGestureRecognizer: 
     } else {
         fullScreenVC.transitioningDelegate = self;
         fullScreenVC.modalPresentationStyle = UIModalPresentationCustom;

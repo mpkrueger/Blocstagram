@@ -87,6 +87,8 @@
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
+    
+    
 
     NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_previewImageView, _filterCollectionView, _sendButton);
     

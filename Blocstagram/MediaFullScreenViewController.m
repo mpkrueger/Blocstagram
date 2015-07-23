@@ -52,7 +52,8 @@
     [self.tap requireGestureRecognizerToFail:self.doubleTap];
     
     [self.scrollView addGestureRecognizer:self.tap];
-    [self.view addGestureRecognizer:self.tap];
+    
+//    [[[[UIApplication sharedApplication] delegate] window] addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
 }
 
