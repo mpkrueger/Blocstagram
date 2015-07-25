@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
+@property (nonatomic, strong) UITapGestureRecognizer *tapBehind;
 
 @end
 
@@ -46,6 +47,8 @@
     
     self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
     
+    self.tapBehind = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBehindFired:)];
+    
     self.doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapFired:)];
     self.doubleTap.numberOfTapsRequired = 2;
     
@@ -53,7 +56,7 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     
-//    [[[[UIApplication sharedApplication] delegate] window] addGestureRecognizer:self.tap];
+//    [[[[UIApplication sharedApplication] delegate] window] addGestureRecognizer:self.tapBehindFired];
     [self.scrollView addGestureRecognizer:self.doubleTap];
 }
 
@@ -127,6 +130,11 @@
 - (void) tapFired:(UITapGestureRecognizer *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void) tapBehindFired:(UITapGestureRecognizer *)sender {
+    
+}
+
 
 - (void) doubleTapFired:(UITapGestureRecognizer *)sender {
     if (self.scrollView.zoomScale == self.scrollView.minimumZoomScale) {
