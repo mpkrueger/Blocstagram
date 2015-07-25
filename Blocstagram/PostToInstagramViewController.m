@@ -56,7 +56,7 @@
         [self.sendButton setAttributedTitle:[self sendAttributedString] forState:UIControlStateNormal];
         [self.sendButton addTarget:self action:@selector(sendButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         
-        self.sendBarButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Send", @"Send button") style:UIBarButtonItemStyleDone target:self action:@selector(sendButtonPressed:)];
+        self.sendBarButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Submit", @"Submit button") style:UIBarButtonItemStyleDone target:self action:@selector(sendButtonPressed:)];
         
         [self addfiltersToQueue];
     }
