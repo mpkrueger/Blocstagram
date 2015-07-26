@@ -39,10 +39,9 @@
                                          @"id": @"333",
                                          @"profile_picture": @"http://www.example.com/example.jpg"};
     
-    NSDictionary *commentsDictionary = @{@"data": @{@"id": @"555",
-                                                    @"from": fromUserDictionary,
-                                                    @"text": @"wow"}};
-
+    NSDictionary *commentsDictionary = @{@"id": @"555",
+                                         @"from": fromUserDictionary,
+                                         @"text": @"wow"};
     
     NSDictionary *sourceDictionary = @{@"id": @"123",
                                        @"user": userDictionary,
@@ -50,15 +49,22 @@
                                        @"caption": @{@"text": @"nice"},
                                        @"comments": @{@"data": @[commentsDictionary]},
                                        @"user_has_liked": @YES};
+    
+    Comment *newComment = [[Comment alloc] initWithDictionary:commentsDictionary];
 
     NSString *standardResolutionImageURLString = sourceDictionary[@"images"][@"standard_resolution"][@"url"];
     NSURL *standardResolutionURL = [NSURL URLWithString:standardResolutionImageURLString];
     
     Media *testMedia = [[Media alloc] initWithDictionary:sourceDictionary];
     
+    Comment *comment = [testMedia.comments objectAtIndex:0];
+    
+    NSString *commentText = comment.text;
+    
     XCTAssertEqualObjects(testMedia.idNumber, sourceDictionary[@"id"], @"The ID number should be equal");
     XCTAssertEqualObjects(testMedia.mediaURL, standardResolutionURL, @"The media URL should be equal");
     XCTAssertEqualObjects(testMedia.caption, sourceDictionary[@"caption"][@"text"], @"The caption should be equal");
+    XCTAssertEqualObjects(commentText, newComment.text, @"The comment should be equal");
     XCTAssertTrue(testMedia.likeState == LikeStateLiked);
 }
 
