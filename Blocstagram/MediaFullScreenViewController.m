@@ -9,7 +9,7 @@
 #import "MediaFullScreenViewController.h"
 #import "Media.h"
 
-@interface MediaFullScreenViewController () <UIScrollViewDelegate>
+@interface MediaFullScreenViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
@@ -48,6 +48,8 @@
     self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
     
     self.tapBehind = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBehindFired:)];
+    self.tapBehind.cancelsTouchesInView = NO;
+    self.tapBehind.delegate = self;
     
     self.doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapFired:)];
     self.doubleTap.numberOfTapsRequired = 2;
@@ -56,7 +58,7 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     
-//    [[[[UIApplication sharedApplication] delegate] window] addGestureRecognizer:self.tapBehindFired];
+    [[[[UIApplication sharedApplication] delegate] window] addGestureRecognizer:self.tapBehind];
     [self.scrollView addGestureRecognizer:self.doubleTap];
 }
 
@@ -125,6 +127,12 @@
     [self centerScrollView];
 }
 
+- (void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[[[UIApplication sharedApplication] delegate] window] removeGestureRecognizer:self.tapBehind];
+}
+
 #pragma mark - Gesture Recognizers
 
 - (void) tapFired:(UITapGestureRecognizer *)sender {
@@ -132,7 +140,15 @@
 }
 
 - (void) tapBehindFired:(UITapGestureRecognizer *)sender {
-    
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        CGPoint location = [sender locationInView:self.view];
+        
+        if (![self.view pointInside:location withEvent:nil]) {
+            
+            [self.view.window removeGestureRecognizer:self.tapBehind];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
 }
 
 
@@ -151,6 +167,18 @@
     } else {
         [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
     }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return YES;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES;
 }
 
 /*
